@@ -1,8 +1,8 @@
-# Laravel Web Installer | A Web Installer [Package](https://packagist.org/packages/rachidlaasri/laravel-installer)
+# Laravel Web Installer | A Web Installer [Package](https://packagist.org/packages/beycan/laravel-installer)
 
-[![Total Downloads](https://poser.pugx.org/rachidlaasri/laravel-installer/d/total.svg)](https://packagist.org/packages/rachidlaasri/laravel-installer)
-[![Latest Stable Version](https://poser.pugx.org/rachidlaasri/laravel-installer/v/stable.svg)](https://packagist.org/packages/rachidlaasri/laravel-installer)
-[![License](https://poser.pugx.org/rachidlaasri/laravel-installer/license.svg)](https://packagist.org/packages/rachidlaasri/laravel-installer)
+[![Total Downloads](https://poser.pugx.org/beycan/laravel-installer/d/total.svg)](https://packagist.org/packages/beycan/laravel-installer)
+[![Latest Stable Version](https://poser.pugx.org/beycan/laravel-installer/v/stable.svg)](https://packagist.org/packages/beycan/laravel-installer)
+[![License](https://poser.pugx.org/beycan/laravel-installer/license.svg)](https://packagist.org/packages/beycan/laravel-installer)
 
 - [About](#about)
 - [Requirements](#requirements)
@@ -37,7 +37,7 @@ The current features are :
 1. From your projects root folder in terminal run:
 
 ```bash
-    composer require rachidlaasri/laravel-installer
+    composer require beycan/laravel-installer
 ```
 
 2. Register the package
@@ -50,7 +50,7 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ```php
 	'providers' => [
-	    RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+	    Beycan\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 	];
 ```
 
@@ -86,8 +86,8 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ## Contributing
 
-* If you have any suggestions please let me know : https://github.com/RachidLaasri/LaravelInstaller/pulls.
-* Please help us provide more languages for this awesome package please send a pull request https://github.com/RachidLaasri/LaravelInstaller/pulls.
+* If you have any suggestions please let me know : https://github.com/Beycan/LaravelInstaller/pulls.
+* Please help us provide more languages for this awesome package please send a pull request https://github.com/Beycan/LaravelInstaller/pulls.
 
 ## Help
 
