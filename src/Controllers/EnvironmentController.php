@@ -43,7 +43,7 @@ class EnvironmentController extends Controller
      */
     public function environmentWizard()
     {
-        $envConfig = $this->EnvironmentManager->getEnvContent();
+        $envConfig = \Dotenv\Dotenv::parse($this->EnvironmentManager->getExampleEnvContent());
 
         return view('vendor.installer.environment-wizard', compact('envConfig'));
     }
@@ -55,7 +55,7 @@ class EnvironmentController extends Controller
      */
     public function environmentClassic()
     {
-        $envConfig = $this->EnvironmentManager->getEnvContent();
+        $envConfig = $this->EnvironmentManager->getExampleEnvContent();
 
         return view('vendor.installer.environment-classic', compact('envConfig'));
     }

@@ -46,6 +46,16 @@ class EnvironmentManager
     }
 
     /**
+     * Get the content of the .env file.
+     *
+     * @return string
+     */
+    public function getExampleEnvContent()
+    {
+        return file_get_contents($this->envExamplePath);
+    }
+
+    /**
      * Get the the .env file path.
      *
      * @return string
@@ -95,7 +105,7 @@ class EnvironmentManager
         $results = trans('installer_messages.environment.success');
 
         $envFileData =
-        'APP_NAME=\''.$request->app_name."'\n".
+        'APP_NAME='.$request->app_name."\n".
         'APP_ENV='.$request->environment."\n".
         'APP_KEY='.'base64:'.base64_encode(Str::random(32))."\n".
         'APP_DEBUG='.$request->app_debug."\n".
@@ -124,6 +134,15 @@ class EnvironmentManager
         'PUSHER_APP_KEY='.$request->pusher_app_key."\n".
         'PUSHER_APP_SECRET='.$request->pusher_app_secret;
 
+        $envFileData = implode(PHP_EOL, array_map(function($val) {
+            $val = explode("=", $val);
+            if (count($val) > 1) {
+                return $val[0] . '="' . $val[1] . '"';
+            }
+        
+            return '';
+        }, explode("\n", $envFileData)));
+        
         try {
             file_put_contents($this->envPath, $envFileData);
         } catch (Exception $e) {
