@@ -1,6 +1,7 @@
 {
     "name": "beycan/laravel-installer",
     "description": "Laravel web installer",
+    "version": "4.2.0",
     "license": "MIT",
     "authors": [
         {
