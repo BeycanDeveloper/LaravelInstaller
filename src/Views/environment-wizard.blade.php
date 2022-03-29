@@ -252,7 +252,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="broadcast_driver" id="broadcast_driver" value="log" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.broadcasting_placeholder') }}" />
+                            <input type="text" name="broadcast_driver" id="broadcast_driver" value="{{$envConfig['BROADCAST_DRIVER']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.broadcasting_placeholder') }}" />
                             @if ($errors->has('broadcast_driver'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -270,7 +270,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="cache_driver" id="cache_driver" value="file" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.cache_placeholder') }}" />
+                            <input type="text" name="cache_driver" id="cache_driver" value="{{$envConfig['CACHE_DRIVER']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.cache_placeholder') }}" />
                             @if ($errors->has('cache_driver'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -288,7 +288,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="session_driver" id="session_driver" value="file" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.session_placeholder') }}" />
+                            <input type="text" name="session_driver" id="session_driver" value="{{$envConfig['SESSION_DRIVER']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.session_placeholder') }}" />
                             @if ($errors->has('session_driver'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -306,7 +306,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="queue_driver" id="queue_driver" value="sync" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.queue_placeholder') }}" />
+                            <input type="text" name="queue_driver" id="queue_driver" value="{{$envConfig['QUEUE_CONNECTION']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.queue_placeholder') }}" />
                             @if ($errors->has('queue_driver'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -334,7 +334,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="redis_hostname" id="redis_hostname" value="127.0.0.1" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_host') }}" />
+                            <input type="text" name="redis_hostname" id="redis_hostname" value="{{$envConfig['REDIS_HOST']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_host') }}" />
                             @if ($errors->has('redis_hostname'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -345,7 +345,7 @@
 
                         <div class="form-group {{ $errors->has('redis_password') ? ' has-error ' : '' }}">
                             <label for="redis_password">{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_password') }}</label>
-                            <input type="password" name="redis_password" id="redis_password" value="null" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_password') }}" />
+                            <input type="password" name="redis_password" id="redis_password" value="{{$envConfig['REDIS_PASSWORD']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_password') }}" />
                             @if ($errors->has('redis_password'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -356,7 +356,7 @@
 
                         <div class="form-group {{ $errors->has('redis_port') ? ' has-error ' : '' }}">
                             <label for="redis_port">{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_port') }}</label>
-                            <input type="number" name="redis_port" id="redis_port" value="6379" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_port') }}" />
+                            <input type="number" name="redis_port" id="redis_port" value="{{$envConfig['REDIS_PORT']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.redis_port') }}" />
                             @if ($errors->has('redis_port'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -384,7 +384,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="mail_driver" id="mail_driver" value="smtp" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_driver_placeholder') }}" />
+                            <input type="text" name="mail_driver" id="mail_driver" value="{{$envConfig['MAIL_MAILER']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_driver_placeholder') }}" />
                             @if ($errors->has('mail_driver'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -394,7 +394,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('mail_host') ? ' has-error ' : '' }}">
                             <label for="mail_host">{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_host_label') }}</label>
-                            <input type="text" name="mail_host" id="mail_host" value="smtp.gmail.com" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_host_placeholder') }}" />
+                            <input type="text" name="mail_host" id="mail_host" value="{{$envConfig['MAIL_HOST']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_host_placeholder') }}" />
                             @if ($errors->has('mail_host'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -404,7 +404,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('mail_port') ? ' has-error ' : '' }}">
                             <label for="mail_port">{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_port_label') }}</label>
-                            <input type="number" name="mail_port" id="mail_port" value="465" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_port_placeholder') }}" />
+                            <input type="number" name="mail_port" id="mail_port" value="{{$envConfig['MAIL_PORT']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_port_placeholder') }}" />
                             @if ($errors->has('mail_port'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -414,7 +414,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('mail_username') ? ' has-error ' : '' }}">
                             <label for="mail_username">{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_username_label') }}</label>
-                            <input type="text" name="mail_username" id="mail_username" value="null" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_username_placeholder') }}" />
+                            <input type="text" name="mail_username" id="mail_username" value="{{$envConfig['MAIL_USERNAME']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_username_placeholder') }}" />
                             @if ($errors->has('mail_username'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -424,7 +424,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('mail_password') ? ' has-error ' : '' }}">
                             <label for="mail_password">{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_password_label') }}</label>
-                            <input type="text" name="mail_password" id="mail_password" value="null" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_password_placeholder') }}" />
+                            <input type="text" name="mail_password" id="mail_password" value="{{$envConfig['MAIL_PASSWORD']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_password_placeholder') }}" />
                             @if ($errors->has('mail_password'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -434,7 +434,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('mail_encryption') ? ' has-error ' : '' }}">
                             <label for="mail_encryption">{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_encryption_label') }}</label>
-                            <input type="text" name="mail_encryption" id="mail_encryption" value="null" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_encryption_placeholder') }}" />
+                            <input type="text" name="mail_encryption" id="mail_encryption" value="{{$envConfig['MAIL_ENCRYPTION']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.mail_encryption_placeholder') }}" />
                             @if ($errors->has('mail_encryption'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -462,7 +462,7 @@
                                     </a>
                                 </sup>
                             </label>
-                            <input type="text" name="pusher_app_id" id="pusher_app_id" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_id_palceholder') }}" />
+                            <input type="text" name="pusher_app_id" id="pusher_app_id" value="{{$envConfig['PUSHER_APP_ID']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_id_palceholder') }}" />
                             @if ($errors->has('pusher_app_id'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -472,7 +472,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('pusher_app_key') ? ' has-error ' : '' }}">
                             <label for="pusher_app_key">{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_key_label') }}</label>
-                            <input type="text" name="pusher_app_key" id="pusher_app_key" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_key_palceholder') }}" />
+                            <input type="text" name="pusher_app_key" id="pusher_app_key" value="{{$envConfig['PUSHER_APP_KEY']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_key_palceholder') }}" />
                             @if ($errors->has('pusher_app_key'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -482,7 +482,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('pusher_app_secret') ? ' has-error ' : '' }}">
                             <label for="pusher_app_secret">{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_secret_label') }}</label>
-                            <input type="password" name="pusher_app_secret" id="pusher_app_secret" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_secret_palceholder') }}" />
+                            <input type="password" name="pusher_app_secret" id="pusher_app_secret" value="{{$envConfig['PUSHER_APP_SECRET']}}" placeholder="{{ trans('installer_messages.environment.wizard.form.app_tabs.pusher_app_secret_palceholder') }}" />
                             @if ($errors->has('pusher_app_secret'))
                                 <span class="error-block">
                                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
