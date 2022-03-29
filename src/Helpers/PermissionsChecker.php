@@ -1,6 +1,6 @@
 <?php
 
-namespace RachidLaasri\LaravelInstaller\Helpers;
+namespace Beycan\LaravelInstaller\Helpers;
 
 class PermissionsChecker
 {
